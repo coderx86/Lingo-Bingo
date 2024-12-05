@@ -3,6 +3,12 @@ import jpLogo from "../../assets/jp-image.png";
 import InteractivePng from "../../assets/InteractivePng.png";
 import Pronounciation from "../../assets/Pronounciation.png";
 import mission from "../../assets/mission.png";
+import CountUp from "react-countup";
+import sharma from "../../assets/sharma~2.jpeg";
+import alvarez from "../../assets/alvarez~2.jpeg";
+import lee from "../../assets/Lee.jpeg";
+import khan from "../../assets/aisha~2.jpeg"
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -74,57 +80,155 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* About LIngoBIngo */}
-      <section className="bg-[#58b58d44] py-12">
-        <div className="w-[80%] mx-auto text-[#fd7379]">
-          <h2 className="text-5xl font-bold text-center">About Lingo Bingo</h2>
-          <div className="flex justify-around items-center">
-            <div className="max-w-[500px]">
-              <h2 className="text-4xl font-bold mb-7">
-                Interactive Vocabulary Learning
-              </h2>
-              <p className="text-gray-600">
-                Discover a dynamic approach to mastering vocabulary through
-                immersive activities that make learning engaging and memorable,
-                helping you retain words effortlessly in multiple languages.
-              </p>
+      <main className="bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
+        {/* About LIngoBIngo */}
+        <section className=" py-12">
+          <div className="w-[80%] mx-auto text-[#fd7379]">
+            <h2 className="text-5xl font-bold text-center mb-8">
+              About Lingo Bingo
+            </h2>
+            <div className="flex justify-around items-center">
+              <div className="max-w-[500px]">
+                <h2 className="text-4xl font-bold mb-7">
+                  Interactive Vocabulary Learning
+                </h2>
+                <p className="text-gray-600">
+                  Discover a dynamic approach to mastering vocabulary through
+                  immersive activities that make learning engaging and
+                  memorable, helping you retain words effortlessly in multiple
+                  languages.
+                </p>
+              </div>
+              <div className="max-w-[500px]">
+                <img src={InteractivePng} alt="" />
+              </div>
             </div>
-            <div className="max-w-[500px]">
-              <img src={InteractivePng} alt="" />
+            <div className="flex justify-between items-center">
+              <div className="max-w-[500px]">
+                <img src={Pronounciation} alt="" />
+              </div>
+              <div className="max-w-[500px]">
+                <h2 className="text-4xl font-bold mb-7">
+                  Vocabulary with Pronunciation
+                </h2>
+                <p className="text-gray-600">
+                  Learn the correct pronunciation alongside new words, ensuring
+                  you not only expand your vocabulary but also speak confidently
+                  and accurately in any language.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-between items-center">
+              <div className="max-w-[500px]">
+                <h2 className="text-4xl font-bold mb-7">
+                  Personalized Learning Missions
+                </h2>
+                <p className="text-gray-600">
+                  Set your own language learning goals and embark on customized
+                  missions tailored to your pace and style, making the journey
+                  fun and uniquely yours.
+                </p>
+              </div>
+              <div className="max-w-[500px]">
+                <img src={mission} alt="" />
+              </div>
             </div>
           </div>
-          <div className="flex justify-between items-center">
-            <div className="max-w-[500px]">
-              <img src={Pronounciation} alt="" />
-            </div>
-            <div className="max-w-[500px]">
-              <h2 className="text-4xl font-bold mb-7">
-                Vocabulary with Pronunciation
-              </h2>
-              <p className="text-gray-600">
-                Learn the correct pronunciation alongside new words, ensuring
-                you not only expand your vocabulary but also speak confidently
-                and accurately in any language.
+        </section>
+        {/* Our Success */}
+        <section>
+          <div className="w-[80%] mx-auto pb-12">
+            <div className="text-center mb-14">
+              <h1 className="text-5xl font-bold mb-8 text-[#fd7379]">Our Success</h1>
+              <p className="max-w-[600px] mx-auto text-gray-600">
+                Empowering thousands to master languages with ease, Lingo Bingo
+                transforms vocabulary learning into an engaging, impactful
+                experience.
               </p>
             </div>
-          </div>
-          <div className="flex justify-between items-center">
-            <div className="max-w-[500px]">
-              <h2 className="text-4xl font-bold mb-7">
-                Personalized Learning Missions
-              </h2>
-              <p className="text-gray-600">
-                Set your own language learning goals and embark on customized
-                missions tailored to your pace and style, making the journey fun
-                and uniquely yours.
-              </p>
+            <div className="grid grid-cols-4 gap-7 text-white  text-center">
+              <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
+                <CountUp
+                  className="font-semibold"
+                  start={0}
+                  end={5000}
+                  duration={1.5}
+                  suffix="+"
+                ></CountUp>
+                <h3 className="font-bold">Learners</h3>
+              </div>
+              <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
+                <CountUp
+                  className="font-semibold"
+                  start={0}
+                  end={10}
+                  duration={1.5}
+                ></CountUp>
+                <h3 className="font-bold">Lessons</h3>
+              </div>
+              <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
+                <CountUp
+                  className="font-semibold"
+                  start={0}
+                  end={80}
+                  duration={1.5}
+                ></CountUp>
+                <h3 className="font-bold">Vocabulary</h3>
+              </div>
+              <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
+                <CountUp
+                  className="font-semibold"
+                  start={0}
+                  end={10}
+                  duration={1.5}
+                ></CountUp>
+                <h3 className="font-bold">Tutorial</h3>
+              </div>
             </div>
-            <div className="max-w-[500px]">
-              <img src={mission} alt="" />
+          </div>
+        </section>
+        {/* Client opinion */}
+        <section className="py-12">
+          <div className="w-[80%] mx-auto">
+            <div className="text-center mb-10 ">
+              <div className="flex">
+                <h2 className="text-5xl text-[#3588aa] font-bold mb-6">What Our Learners Think</h2><FaQuoteRight className="text-3xl text-[#fd7379]" />
+                </div>
+              <p className="max-w-[600px] mx-auto text-gray-600">Hear inspiring experiences and feedback from our users as they share how Lingo Bingo transformed their language learning journey.</p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
+                <img className="size-[200px]" src={sharma} alt="" />
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Ravi Sharma</h3>
+                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> The app's interactive approach helped me retain vocabulary effortlessly. Learning Japanese has never been this fun!</p>
+                </div>
+              </div>
+              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Sofia Alvarez</h3>
+                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> I loved how pronunciation is taught alongside vocabulary. It gave me the confidence to speak Japanese without hesitation.</p>
+                </div>
+                <img className="size-[200px]" src={alvarez} alt="" />
+              </div>
+              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
+                <img className="size-[200px]" src={lee} alt="" />
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Michael Lee</h3>
+                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> Personalized missions kept me motivated and on track. I’ve made amazing progress in learning Japanese with Lingo Bingo!</p>
+                </div>
+              </div>
+              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Aisha Khan</h3>
+                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600">Lingo Bingo turned language learning into a daily habit. The engaging methods helped me master Japanese faster than I expected!</p>
+                </div>
+                <img className="size-[200px]" src={khan}alt="" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 };
