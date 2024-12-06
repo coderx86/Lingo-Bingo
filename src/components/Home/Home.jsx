@@ -7,10 +7,14 @@ import CountUp from "react-countup";
 import sharma from "../../assets/sharma~2.jpeg";
 import alvarez from "../../assets/alvarez~2.jpeg";
 import lee from "../../assets/Lee.jpeg";
-import khan from "../../assets/aisha~2.jpeg"
+import khan from "../../assets/aisha~2.jpeg";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { authContext } from "../../layout/MainLayout";
 
 const Home = () => {
+  const { user } = useContext(authContext);
   return (
     <div>
       {/* banner */}
@@ -67,14 +71,20 @@ const Home = () => {
             </div>
             <div>
               <div className="mb-2">
-                <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold">
-                  Get Started
-                </button>
+                <NavLink to="/learn">
+                  <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold">
+                    Get Started
+                  </button>
+                </NavLink>
               </div>
               <div>
-                <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold">
-                  I Already Have an Account
-                </button>
+                {!user && (
+                  <NavLink to="/login">
+                    <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold">
+                      I Already Have an Account
+                    </button>
+                  </NavLink>
+                )}
               </div>
             </div>
           </div>
@@ -139,7 +149,9 @@ const Home = () => {
         <section>
           <div className="w-[80%] mx-auto pb-12">
             <div className="text-center mb-14">
-              <h1 className="text-5xl font-bold mb-8 text-[#fd7379]">Our Success</h1>
+              <h1 className="text-5xl font-bold mb-8 text-[#fd7379]">
+                Our Success
+              </h1>
               <p className="max-w-[600px] mx-auto text-gray-600">
                 Empowering thousands to master languages with ease, Lingo Bingo
                 transforms vocabulary learning into an engaging, impactful
@@ -191,39 +203,84 @@ const Home = () => {
         <section className="py-12">
           <div className="w-[80%] mx-auto">
             <div className="text-center mb-10 ">
-              <div className="flex">
-                <h2 className="text-5xl text-[#3588aa] font-bold mb-6">What Our Learners Think</h2><FaQuoteRight className="text-3xl text-[#fd7379]" />
-                </div>
-              <p className="max-w-[600px] mx-auto text-gray-600">Hear inspiring experiences and feedback from our users as they share how Lingo Bingo transformed their language learning journey.</p>
+              <div className="flex items-center justify-center">
+                <h2 className="text-5xl text-[#3588aa] font-bold mb-6">
+                  What Our Learners Think
+                </h2>
+                <FaQuoteRight className="text-3xl text-[#fd7379]" />
+              </div>
+              <p className="max-w-[600px] mx-auto text-gray-600">
+                Hear inspiring experiences and feedback from our users as they
+                share how Lingo Bingo transformed their language learning
+                journey.
+              </p>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
-                <img className="size-[200px]" src={sharma} alt="" />
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Ravi Sharma</h3>
-                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> The app's interactive approach helped me retain vocabulary effortlessly. Learning Japanese has never been this fun!</p>
+              <div className="flex justify-start">
+                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
+                  <img className="size-[200px]" src={sharma} alt="" />
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
+                      Ravi Sharma
+                    </h3>
+                    <FaQuoteLeft className="text-[#fd7379]" />
+                    <p className="text-gray-600">
+                      {" "}
+                      The app's interactive approach helped me retain vocabulary
+                      effortlessly. Learning Japanese has never been this fun!
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Sofia Alvarez</h3>
-                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> I loved how pronunciation is taught alongside vocabulary. It gave me the confidence to speak Japanese without hesitation.</p>
+              <div className="flex justify-end">
+                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
+                      Sofia Alvarez
+                    </h3>
+                    <FaQuoteLeft className="text-[#fd7379]" />
+                    <p className="text-gray-600">
+                      {" "}
+                      I loved how pronunciation is taught alongside vocabulary.
+                      It gave me the confidence to speak Japanese without
+                      hesitation.
+                    </p>
+                  </div>
+                  <img className="size-[200px]" src={alvarez} alt="" />
                 </div>
-                <img className="size-[200px]" src={alvarez} alt="" />
               </div>
-              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
-                <img className="size-[200px]" src={lee} alt="" />
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Michael Lee</h3>
-                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600"> Personalized missions kept me motivated and on track. I’ve made amazing progress in learning Japanese with Lingo Bingo!</p>
+              <div className="flex justify-start">
+                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
+                  <img className="size-[200px]" src={lee} alt="" />
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
+                      Michael Lee
+                    </h3>
+                    <FaQuoteLeft className="text-[#fd7379]" />
+                    <p className="text-gray-600">
+                      {" "}
+                      Personalized missions kept me motivated and on track. I’ve
+                      made amazing progress in learning Japanese with Lingo
+                      Bingo!
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px] mx-auto">
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">Aisha Khan</h3>
-                  <FaQuoteLeft className="text-[#fd7379]" /><p className="text-gray-600">Lingo Bingo turned language learning into a daily habit. The engaging methods helped me master Japanese faster than I expected!</p>
+              <div className="flex justify-end">
+                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
+                  <div className="p-8">
+                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
+                      Aisha Khan
+                    </h3>
+                    <FaQuoteLeft className="text-[#fd7379]" />
+                    <p className="text-gray-600">
+                      Lingo Bingo turned language learning into a daily habit.
+                      The engaging methods helped me master Japanese faster than
+                      I expected!
+                    </p>
+                  </div>
+                  <img className="size-[200px]" src={khan} alt="" />
                 </div>
-                <img className="size-[200px]" src={khan}alt="" />
               </div>
             </div>
           </div>

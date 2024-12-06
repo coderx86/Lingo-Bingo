@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logoIcon from "../../assets/logo-icon.png";
+import { useContext } from "react";
+import { authContext } from "../../layout/MainLayout";
 
 const Navbar = () => {
+  const { user, handleLogout, loading } = useContext(authContext);
+
   return (
     <div className="fixed top-0 z-10 shadow-md backdrop-blur-sm p-6 w-full">
       <div className="w-full mx-auto flex justify-between items-center px-4 ">
@@ -15,7 +19,7 @@ const Navbar = () => {
               <Link to="/home">Home</Link>
             </li>
             <li>
-              <Link>Learn</Link>
+              <Link to="/learn">Learn</Link>
             </li>
             <li>
               <Link>Tutorial</Link>
@@ -28,10 +32,34 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <button className="btn bg-[#f1ab4a] border-none text-white font-bold">
-            LogIn
-          </button>
+        <div className="flex gap-4 items-center">
+          {
+          loading ? (
+            <span className="loading loading-ring loading-md"></span>
+          ) : user ? (
+            <img
+              src={user.photoURL}
+              alt="User Profile"
+              className="w-10 h-10 rounded-full"
+            />
+          ) : null
+          }
+          {
+          user ? (
+            <button
+              className="btn bg-[#f1ab4a] border-none text-white font-bold"
+              onClick={handleLogout}
+            >
+              LogOut
+            </button>
+          ) : (
+            <NavLink to="/login">
+              <button className="btn bg-[#f1ab4a] border-none text-white font-bold">
+                Login
+              </button>
+            </NavLink>
+          )
+          }
         </div>
       </div>
     </div>
