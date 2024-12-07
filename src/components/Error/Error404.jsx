@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Error404 = () => {
   return (
     <div>
@@ -11,7 +13,7 @@ const Error404 = () => {
             <span class="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#7E60BF] group-hover:translate-y-0 group-hover:translate-x-0"></span>
 
             <span class="relative block px-8 py-3 bg-[#1A2238] border border-current">
-              <router-link to="/">Go Home</router-link>
+              <NavLink to="/home">Go Home</NavLink>
             </span>
           </a>
         </button>

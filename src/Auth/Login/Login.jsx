@@ -20,7 +20,7 @@ const Login = ({ children }) => {
   };
 
   return (
-    <div className="pt-10 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
+    <div className="pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
       <div className="hero min-h-screen">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
