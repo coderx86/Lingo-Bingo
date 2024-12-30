@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logoIcon from "../../assets/logo-icon.png";
 import { useContext } from "react";
 import { authContext } from "../../layout/MainLayout";
@@ -6,9 +6,12 @@ import { authContext } from "../../layout/MainLayout";
 const Navbar = () => {
   const { user, handleLogout, loading } = useContext(authContext);
 
+  const navLinkClasses = ({ isActive }) =>
+    isActive ? "text-[#fd7379]" : "text-white";
+
   return (
     <div className="fixed top-0 z-10 shadow-md backdrop-blur-sm p-6 w-full">
-      <div className="w-full mx-auto flex justify-between items-center px-4 ">
+      <div className="w-full mx-auto flex justify-between items-center px-4">
         <div className="flex items-center gap-2">
           <img className="size-8" src={logoIcon} alt="Logo" />
           <h3 className="text-2xl font-bold text-white">Lingo Bingo</h3>
@@ -16,25 +19,34 @@ const Navbar = () => {
         <div>
           <ul className="flex gap-6 text-white font-semibold">
             <li>
-              <Link to="/home">Home</Link>
+              <NavLink to="/home" className={navLinkClasses}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/learn">Learn</Link>
+              <NavLink to="/learn" className={navLinkClasses}>
+                Learn
+              </NavLink>
             </li>
             <li>
-              <Link>Tutorial</Link>
+              <NavLink to="/tutorial" className={navLinkClasses}>
+                Tutorial
+              </NavLink>
             </li>
             <li>
-              <Link>About Us</Link>
+              <NavLink to="/about" className={navLinkClasses}>
+                About Us
+              </NavLink>
             </li>
             <li>
-              <Link>Me</Link>
+              <NavLink to="/me" className={navLinkClasses}>
+                Me
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="flex gap-4 items-center">
-          {
-          loading ? (
+          {loading ? (
             <span className="loading loading-ring loading-md"></span>
           ) : user ? (
             <img
@@ -42,10 +54,8 @@ const Navbar = () => {
               alt="User Profile"
               className="w-10 h-10 rounded-full"
             />
-          ) : null
-          }
-          {
-          user ? (
+          ) : null}
+          {user ? (
             <button
               className="btn bg-[#f1ab4a] border-none text-white font-bold"
               onClick={handleLogout}
@@ -58,8 +68,7 @@ const Navbar = () => {
                 Login
               </button>
             </NavLink>
-          )
-          }
+          )}
         </div>
       </div>
     </div>

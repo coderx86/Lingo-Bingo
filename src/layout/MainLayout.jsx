@@ -64,7 +64,7 @@ const MainLayout = () => {
             unsubscribe()
           } 
     },[])
-      
+
     const authData = {
         handleGoogleLogin,
         user,

@@ -5,7 +5,11 @@ import { Navigate } from "react-router-dom";
 const PrivateRoute = ({children}) => {
     const {user, loading } = useContext(authContext);
     if(loading){
-        return <h1>loading....</h1>
+        return <div className="pt-24 flex justify-center bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
+            <div className="py-20">
+            <span className="loading loading-bars loading-lg"></span>
+            </div>
+        </div>
     }
     if(user){
         return children;

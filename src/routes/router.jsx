@@ -7,6 +7,8 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import SignUp from "../Auth/SignUp/SignUp";
 import MainLayout from "../layout/MainLayout";
 import Lesson from "../components/Lesson/Lesson";
+import Me from "../components/Me/Me";
+import Tutorial from "../components/Tutorial/Tutorial";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +43,18 @@ const router = createBrowserRouter([
                 loader: ()=> fetch('japaneseWord.json'),
                 element: <PrivateRoute>
                     <Lesson></Lesson>
+                </PrivateRoute>
+            },
+            {
+                path: "/Me",
+                element: <PrivateRoute>
+                    <Me></Me>
+                </PrivateRoute>
+            },
+            {
+                path:"/Tutorial",
+                element:<PrivateRoute>
+                    <Tutorial></Tutorial>
                 </PrivateRoute>
             }
         ]

@@ -11,10 +11,11 @@ const Error404 = () => {
         <button class="mt-5">
           <a class="relative inline-block text-sm font-medium text-[#7E60BF] group active:text-orange-500 focus:outline-none focus:ring">
             <span class="absolute inset-0 transition-transform translate-x-0.5 translate-y-0.5 bg-[#7E60BF] group-hover:translate-y-0 group-hover:translate-x-0"></span>
-
+            <NavLink to="/home">
             <span class="relative block px-8 py-3 bg-[#1A2238] border border-current">
-              <NavLink to="/home">Go Home</NavLink>
+              Go Home
             </span>
+            </NavLink>
           </a>
         </button>
       </main>

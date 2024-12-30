@@ -11,7 +11,7 @@ const Learn = () => {
   }
 
   return (
-    <div className="pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b] pt-24">
+    <div className="pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
       <div className="w-[80%] mx-auto py-14">
         <div>
           <h1 className="text-5xl font-bold text-[#fd7379] text-center mb-6">
