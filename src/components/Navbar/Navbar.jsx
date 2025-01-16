@@ -1,16 +1,39 @@
 import { NavLink } from "react-router-dom";
 import logoIcon from "../../assets/logo-icon.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from "../../layout/MainLayout";
 
 const Navbar = () => {
   const { user, handleLogout, loading } = useContext(authContext);
 
-  const navLinkClasses = ({ isActive }) =>
-    isActive ? "text-[#fd7379]" : "text-white";
+  const navLinkClasses = ({ isActive }) => 
+    isActive ? "text-[#fd7379] text-extrabold text-xl" : "text-white";
+  const [showBar, setshowBar] = useState(true);
+  console.log
 
   return (
-    <div className="fixed top-0 z-10 shadow-md backdrop-blur-sm p-6 w-full">
+<div>
+  {/* welcome message */}
+  {showBar && user?.displayName && (
+  <div className="fixed top-0 w-full bg-green-500 text-white text-center py-2 px-4 flex justify-between items-center z-20">
+    <span>
+      Welcome, {user.displayName}!
+    </span>
+    <button
+      onClick={() => setshowBar(false)}
+      className="text-white font-bold text-lg"
+    >
+      ✖
+    </button>
+  </div>
+)}
+
+{/* navbar */}
+<div
+  className={`fixed ${
+    showBar ? "top-8" : "top-0"
+  } z-10 shadow-md backdrop-blur-sm p-6 w-full transition-all`}
+>
       <div className="w-full mx-auto flex justify-between items-center px-4">
         <div className="flex items-center gap-2">
           <img className="size-8" src={logoIcon} alt="Logo" />
@@ -72,6 +95,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+</div>
   );
 };
 
