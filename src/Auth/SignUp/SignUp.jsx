@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { authContext } from "../../layout/MainLayout";
 import { FaGoogle } from "react-icons/fa6";
 import { Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
   const { handleSignUp, handleGoogleLogin, user, loading } =
@@ -41,6 +42,9 @@ const SignUp = () => {
   }
   return (
     <div>
+      <Helmet>
+        <title>Lingo Bingo | SignUp</title>
+      </Helmet>
       <div className="pt-24 pb-16 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">

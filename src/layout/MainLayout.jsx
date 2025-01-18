@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider,signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { HelmetProvider } from "react-helmet-async";
 
 export const authContext = createContext();
 const MainLayout = () => {
@@ -117,11 +118,13 @@ const MainLayout = () => {
 
     return (
         <div>
+          <HelmetProvider>
             <authContext.Provider value={authData}>
                 <Navbar></Navbar>
                 <Outlet></Outlet>
                 <Footer></Footer>
             </authContext.Provider>
+          </HelmetProvider>
         </div>
     );
 };

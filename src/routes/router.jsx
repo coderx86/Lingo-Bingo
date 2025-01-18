@@ -11,6 +11,7 @@ import Me from "../components/Me/Me";
 import Tutorial from "../components/Tutorial/Tutorial";
 import UpdateProfile from "../Auth/UpdateProfile/UpdateProfile";
 import ResetPassword from "../Auth/ResetPassword/ResetPassword";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
     {
@@ -73,7 +74,9 @@ const router = createBrowserRouter([
     },
     {
         path:"*",
-        element:<Error404></Error404>
+        element: <HelmetProvider>
+            <Error404></Error404>
+        </HelmetProvider>
     }
 ])
 

@@ -15,6 +15,7 @@ import { authContext } from "../../layout/MainLayout";
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   useEffect(() => {
@@ -25,6 +26,11 @@ const Home = () => {
 
   return (
     <div>
+      {/* Helmet */}
+      <Helmet>
+        <title>Lingo Bingo | Home</title>
+      </Helmet>
+
       {/* banner */}
       <div className="bg-gradient-to-r from-[#3588aa] to-[#58b58c] text-white  pt-24">
         <div className="w-[80%] mx-auto flex items-center py-8">

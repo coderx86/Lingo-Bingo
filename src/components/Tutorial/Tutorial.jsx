@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 
 const Tutorial = () => {
     return (
+        <div>
+            <Helmet>
+                <title>Lingo Bingo | Tutorials </title>
+            </Helmet>
         <div className="pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
             <div className="w-[80%] mx-auto py-16">
                 <div>
@@ -41,6 +46,7 @@ const Tutorial = () => {
                     </NavLink>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
