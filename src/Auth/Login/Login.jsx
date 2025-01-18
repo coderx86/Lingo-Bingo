@@ -55,6 +55,10 @@ const Login = ({ children }) => {
                   required
                 />
               </div>
+              <div>
+                <NavLink to="/reset-password">
+                <p className="text-sm text-red-700">Forgot Password?</p></NavLink>
+              </div>
               <div className="form-control mt-6">
                 <button
                   type="submit"

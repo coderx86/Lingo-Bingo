@@ -10,6 +10,7 @@ import Lesson from "../components/Lesson/Lesson";
 import Me from "../components/Me/Me";
 import Tutorial from "../components/Tutorial/Tutorial";
 import UpdateProfile from "../Auth/UpdateProfile/UpdateProfile";
+import ResetPassword from "../Auth/ResetPassword/ResetPassword";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login></Login>
+            },
+            {
+                path: "reset-password",
+                element: <ResetPassword></ResetPassword>
             },
             {
                 path: "/update",

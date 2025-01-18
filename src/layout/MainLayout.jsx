@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider,signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider,signInWithPopup, onAuthStateChanged, createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut, updateProfile, sendPasswordResetEmail } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 export const authContext = createContext();
@@ -34,6 +34,20 @@ const MainLayout = () => {
           setLoading(false);
         });
     };
+
+    const handleResetPass = (email) => {
+      setLoading(true);
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          // Email sent
+        })
+        .catch(() => {
+          // Handle errors silently or as required
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
     
     const handleUpdate = (displayName, photoURL) => {
       setLoading(true); // Start loading indicator
@@ -97,7 +111,8 @@ const MainLayout = () => {
         handleSignUp,
         handleSignIn,
         loading,
-        handleUpdate
+        handleUpdate,
+        handleResetPass
     }
 
     return (
