@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { authContext } from "../../layout/MainLayout";
+import { NavLink } from "react-router-dom";
 
 const Me = () => {
   const { user, loading } = useContext(authContext);
@@ -25,6 +26,11 @@ const Me = () => {
           <h2 className="text-xl text-center text-gray-600">
             <span className="font-bold">Email:</span> {user.email}
           </h2>
+        </div>
+        <div className="flex justify-center mt-6">
+          <NavLink to="/update">
+          <button className="btn btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold"> Update Profile</button>
+          </NavLink>
         </div>
       </div>
     </div>

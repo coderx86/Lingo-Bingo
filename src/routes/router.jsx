@@ -9,6 +9,7 @@ import MainLayout from "../layout/MainLayout";
 import Lesson from "../components/Lesson/Lesson";
 import Me from "../components/Me/Me";
 import Tutorial from "../components/Tutorial/Tutorial";
+import UpdateProfile from "../Auth/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login></Login>
+            },
+            {
+                path: "/update",
+                element: <PrivateRoute>
+                    <UpdateProfile></UpdateProfile>
+                </PrivateRoute>
             },
             {
                 path: "/learn",

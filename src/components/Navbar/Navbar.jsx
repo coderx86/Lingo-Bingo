@@ -9,7 +9,6 @@ const Navbar = () => {
   const navLinkClasses = ({ isActive }) => 
     isActive ? "text-[#fd7379] text-extrabold text-xl" : "text-white";
   const [showBar, setshowBar] = useState(true);
-  console.log
 
   return (
 <div>

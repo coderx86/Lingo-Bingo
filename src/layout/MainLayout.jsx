@@ -35,6 +35,30 @@ const MainLayout = () => {
         });
     };
     
+    const handleUpdate = (displayName, photoURL) => {
+      setLoading(true); // Start loading indicator
+      if (auth.currentUser) {
+        updateProfile(auth.currentUser, {
+          displayName: displayName,
+          photoURL: photoURL,
+        })
+          .then(() => {
+            // Update successful
+            setUser({
+              ...auth.currentUser,
+              displayName: displayName,
+              photoURL: photoURL,
+            }); // Update local state
+          })
+          .catch((error) => {
+            
+          })
+          .finally(() => {
+            setLoading(false); // Stop loading indicator
+          });
+      }
+    };
+    
     
     const handleSignIn = (email,password) =>{
       setLoading(true)
@@ -72,7 +96,8 @@ const MainLayout = () => {
         handleLogout,
         handleSignUp,
         handleSignIn,
-        loading
+        loading,
+        handleUpdate
     }
 
     return (
