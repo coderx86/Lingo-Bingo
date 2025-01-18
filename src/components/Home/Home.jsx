@@ -12,9 +12,17 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../layout/MainLayout";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   const { user } = useContext(authContext);
+
   return (
     <div>
       {/* banner */}
@@ -94,52 +102,58 @@ const Home = () => {
         {/* About LIngoBIngo */}
         <section className=" py-12">
           <div className="w-[80%] mx-auto text-[#fd7379]">
-            <h2 className="text-5xl font-bold text-center mb-8">
+            <h2 className="text-5xl font-bold text-center mb-4">
               About Lingo Bingo
             </h2>
+
             <div className="flex justify-around items-center">
               <div className="max-w-[500px]">
-                <h2 className="text-4xl font-bold mb-7">
+                <h2 className="text-4xl font-bold mb-7" data-aos="fade-right">
                   Interactive Vocabulary Learning
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600" data-aos="fade-up"
+     data-aos-duration="500">
                   Discover a dynamic approach to mastering vocabulary through
                   immersive activities that make learning engaging and
                   memorable, helping you retain words effortlessly in multiple
                   languages.
                 </p>
               </div>
-              <div className="max-w-[500px]">
+              <div className="max-w-[500px]" data-aos="flip-left">
                 <img src={InteractivePng} alt="" />
               </div>
             </div>
-            <div className="flex justify-between items-center">
-              <div className="max-w-[500px]">
+
+            <div className="flex justify-around items-center">
+              <div className="max-w-[500px]" data-aos="flip-right">
                 <img src={Pronounciation} alt="" />
               </div>
               <div className="max-w-[500px]">
-                <h2 className="text-4xl font-bold mb-7">
+                <h2 className="text-4xl font-bold mb-7" data-aos="fade-left">
                   Vocabulary with Pronunciation
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600" data-aos="fade-up"
+     data-aos-duration="500">
                   Learn the correct pronunciation alongside new words, ensuring
                   you not only expand your vocabulary but also speak confidently
                   and accurately in any language.
                 </p>
               </div>
             </div>
-            <div className="flex justify-between items-center">
+
+            <div className="flex justify-around items-center">
               <div className="max-w-[500px]">
-                <h2 className="text-4xl font-bold mb-7">
+                <h2 className="text-4xl font-bold mb-7" data-aos="fade-right">
                   Personalized Learning Missions
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-gray-600" data-aos="fade-up"
+     data-aos-duration="500">
                   Set your own language learning goals and embark on customized
                   missions tailored to your pace and style, making the journey
                   fun and uniquely yours.
                 </p>
               </div>
-              <div className="max-w-[500px]">
+              <div className="max-w-[500px]" data-aos="flip-left">
                 <img src={mission} alt="" />
               </div>
             </div>
@@ -216,7 +230,7 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex justify-start">
+              <div className="flex justify-start" data-aos="fade-right" data-aos-duration="1000">
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <img className="size-[200px]" src={sharma} alt="" />
                   <div className="p-8">
@@ -232,7 +246,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-end" data-aos="fade-left" data-aos-duration="1000">
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
@@ -249,7 +263,7 @@ const Home = () => {
                   <img className="size-[200px]" src={alvarez} alt="" />
                 </div>
               </div>
-              <div className="flex justify-start">
+              <div className="flex justify-start" data-aos="fade-right" data-aos-duration="1000">
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <img className="size-[200px]" src={lee} alt="" />
                   <div className="p-8">
@@ -266,7 +280,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-end" data-aos="fade-left" data-aos-duration="1000">
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
