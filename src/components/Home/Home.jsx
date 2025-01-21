@@ -4,6 +4,7 @@ import InteractivePng from "../../assets/InteractivePng.png";
 import Pronounciation from "../../assets/Pronounciation.png";
 import mission from "../../assets/mission.png";
 import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 import sharma from "../../assets/sharma~2.jpeg";
 import alvarez from "../../assets/alvarez~2.jpeg";
 import lee from "../../assets/Lee.jpeg";
@@ -12,15 +13,15 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../layout/MainLayout";
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
 
   const { user } = useContext(authContext);
 
@@ -117,8 +118,11 @@ const Home = () => {
                 <h2 className="text-4xl font-bold mb-7" data-aos="fade-right">
                   Interactive Vocabulary Learning
                 </h2>
-                <p className="text-gray-600" data-aos="fade-up"
-     data-aos-duration="500">
+                <p
+                  className="text-gray-600"
+                  data-aos="fade-up"
+                  data-aos-duration="500"
+                >
                   Discover a dynamic approach to mastering vocabulary through
                   immersive activities that make learning engaging and
                   memorable, helping you retain words effortlessly in multiple
@@ -138,8 +142,11 @@ const Home = () => {
                 <h2 className="text-4xl font-bold mb-7" data-aos="fade-left">
                   Vocabulary with Pronunciation
                 </h2>
-                <p className="text-gray-600" data-aos="fade-up"
-     data-aos-duration="500">
+                <p
+                  className="text-gray-600"
+                  data-aos="fade-up"
+                  data-aos-duration="500"
+                >
                   Learn the correct pronunciation alongside new words, ensuring
                   you not only expand your vocabulary but also speak confidently
                   and accurately in any language.
@@ -152,8 +159,11 @@ const Home = () => {
                 <h2 className="text-4xl font-bold mb-7" data-aos="fade-right">
                   Personalized Learning Missions
                 </h2>
-                <p className="text-gray-600" data-aos="fade-up"
-     data-aos-duration="500">
+                <p
+                  className="text-gray-600"
+                  data-aos="fade-up"
+                  data-aos-duration="500"
+                >
                   Set your own language learning goals and embark on customized
                   missions tailored to your pace and style, making the journey
                   fun and uniquely yours.
@@ -180,41 +190,73 @@ const Home = () => {
             </div>
             <div className="grid grid-cols-4 gap-7 text-white  text-center">
               <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
-                <CountUp
-                  className="font-semibold"
-                  start={0}
-                  end={5000}
-                  duration={1.5}
-                  suffix="+"
-                ></CountUp>
-                <h3 className="font-bold">Learners</h3>
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div className="text-2xl" style={{ height: 30 }}>
+                      {isVisible ? (
+                        <CountUp
+                          className="font-semibold"
+                          start={0}
+                          end={5000}
+                          duration={1.5}
+                          suffix="+"
+                        />
+                      ) : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+                <h3 className="font-semibold">Learners</h3>
               </div>
               <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
-                <CountUp
-                  className="font-semibold"
-                  start={0}
-                  end={10}
-                  duration={1.5}
-                ></CountUp>
-                <h3 className="font-bold">Lessons</h3>
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div className="text-2xl" style={{ height: 30 }}>
+                      {isVisible ? (
+                        <CountUp
+                          className="font-semibold"
+                          start={0}
+                          end={10}
+                          duration={1.5}
+                        />
+                      ) : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+                <h3 className="font-semibold">Lessons</h3>
               </div>
               <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
-                <CountUp
-                  className="font-semibold"
-                  start={0}
-                  end={80}
-                  duration={1.5}
-                ></CountUp>
-                <h3 className="font-bold">Vocabulary</h3>
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div className="text-2xl" style={{ height: 30 }}>
+                      {isVisible ? (
+                        <CountUp
+                          className="font-semibold"
+                          start={0}
+                          end={80}
+                          duration={1.5}
+                        />
+                      ) : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+                <h3 className="font-semibold">Vocabulary</h3>
               </div>
               <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
-                <CountUp
-                  className="font-semibold"
-                  start={0}
-                  end={10}
-                  duration={1.5}
-                ></CountUp>
-                <h3 className="font-bold">Tutorial</h3>
+                <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
+                  {({ isVisible }) => (
+                    <div className="text-2xl" style={{ height: 30 }}>
+                      {isVisible ? (
+                        <CountUp
+                          className="font-semibold"
+                          start={0}
+                          end={10}
+                          duration={1.5}
+                        />
+                      ) : null}
+                    </div>
+                  )}
+                </VisibilitySensor>
+                <h3 className="font-semibold">Tutorials</h3>
               </div>
             </div>
           </div>
@@ -236,7 +278,11 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex justify-start" data-aos="fade-right" data-aos-duration="1000">
+              <div
+                className="flex justify-start"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <img className="size-[200px]" src={sharma} alt="" />
                   <div className="p-8">
@@ -252,7 +298,11 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-end" data-aos="fade-left" data-aos-duration="1000">
+              <div
+                className="flex justify-end"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
@@ -269,7 +319,11 @@ const Home = () => {
                   <img className="size-[200px]" src={alvarez} alt="" />
                 </div>
               </div>
-              <div className="flex justify-start" data-aos="fade-right" data-aos-duration="1000">
+              <div
+                className="flex justify-start"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <img className="size-[200px]" src={lee} alt="" />
                   <div className="p-8">
@@ -286,7 +340,11 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex justify-end" data-aos="fade-left" data-aos-duration="1000">
+              <div
+                className="flex justify-end"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
                   <div className="p-8">
                     <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
