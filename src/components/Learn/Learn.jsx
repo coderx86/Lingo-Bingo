@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { NavLink, useLoaderData } from "react-router-dom";
 import LessonCard from "../LessonCard/LessonCard";
 import { Helmet } from "react-helmet-async";
 
@@ -28,10 +28,37 @@ const Learn = () => {
               every step is designed to make learning fun and effective!
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 mt-16 mb-10">
+          <div className="grid grid-cols-3 gap-4 mt-16 mb-20">
             {cardNumArray.map((card, index) => (
               <LessonCard key={index} cardNum={card} />
             ))}
+          </div>
+          <div className="mb-8">
+            <h2 className="text-center text-[#fd7379] text-3xl font-bold mb-6">
+              learning the alphabet
+            </h2>
+            <p className="text-gray-600 text-center mb-8">
+              In this video, you’ll learn how to be able to perfectly WRITE and
+              READ all Hiragana, characters of the Japanese alphabet.
+            </p>
+            <div className="flex justify-center">
+              <iframe
+                className="rounded-xl"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/6p9Il_j0zjc?si=AbsPjrs8eRBVcd8s"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <NavLink to="/tutorial">
+              <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] text-white font-bold border-none">View More</button>
+            </NavLink>
           </div>
         </div>
       </div>
