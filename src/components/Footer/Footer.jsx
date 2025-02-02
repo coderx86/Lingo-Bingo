@@ -89,6 +89,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="bg-green-400 text-center py-4">
+          <p className="text-gray-600">© 2025 Lingo Bingo. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
