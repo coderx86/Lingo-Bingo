@@ -20,7 +20,7 @@ const UpdateProfile = () => {
         <title>Lingo Bingo | Update Profile</title>
       </Helmet>
       <div className="flex justify-center pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
-        <div className="my-16 border-[#58b58c] border-2 w-[500px] rounded-xl">
+        <div className="my-16 border-[#58b58c] border-2 sm:w-[500px] w-[400px] rounded-xl">
           <form onSubmit={handleSubmit} className="p-10">
             <h3 className="text-2xl font-bold text-center mb-6 text-[#fd7379]">
               Update your Profile

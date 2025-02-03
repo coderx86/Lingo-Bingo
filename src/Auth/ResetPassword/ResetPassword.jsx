@@ -21,7 +21,7 @@ const ResetPassword = () => {
       </Helmet>
       <div className="flex justify-center pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
         <form onSubmit={handleSubmit}>
-          <div className="my-16 border-[#58b58c] border-2 w-[500px] rounded-xl">
+          <div className="my-16 border-[#58b58c] border-2 sm:w-[500px] w-[400px] rounded-xl">
             <div className="p-10">
               <h3 className="text-2xl font-bold text-center text-[#fd7379] mb-8">
                 Reser your password

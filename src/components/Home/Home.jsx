@@ -34,8 +34,8 @@ const Home = () => {
 
       {/* banner */}
       <div className="bg-gradient-to-r from-[#3588aa] to-[#58b58c] text-white  pt-24">
-        <div className="w-[80%] mx-auto flex items-center py-8">
-          <div className="carousel w-full mr-10">
+        <div className="w-[80%] mx-auto sm:flex block items-center py-8">
+          <div className="carousel mr-10 w-full sm:w-1/2">
             <div id="slide1" className="carousel-item relative w-full">
               <img src={logoFlat} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
@@ -72,7 +72,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <div>
+            <div className="sm:text-left text-center">
               <h1 className="text-5xl font-bold mb-3">Lingo Bingo:</h1>
               <h2 className="text-3xl font-bold mb-7">
                 Fun-Filled Language Learning
@@ -84,8 +84,9 @@ const Home = () => {
                 languages.
               </p>
             </div>
-            <div>
-              <div className="mb-2">
+            <div className="flex justify-center sm:justify-start">
+              <div>
+              <div className="mb-2 flex justify-center sm:justify-start">
                 <NavLink to="/learn">
                   <button className="btn bg-gradient-to-r from-[#fd7379] to-[#f1ab4a] border-none text-white font-bold">
                     Get Started
@@ -100,6 +101,7 @@ const Home = () => {
                     </button>
                   </NavLink>
                 )}
+              </div>
               </div>
             </div>
           </div>
@@ -188,7 +190,7 @@ const Home = () => {
                 experience.
               </p>
             </div>
-            <div className="grid grid-cols-4 gap-7 text-white  text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-7 text-white  text-center">
               <div className="px-6 py-4 rounded-xl bg-gradient-to-r from-[#fd7379] to-[#f1ab4a]">
                 <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
                   {({ isVisible }) => (
@@ -263,106 +265,56 @@ const Home = () => {
         </section>
         {/* Client opinion */}
         <section className="py-12">
-          <div className="w-[80%] mx-auto">
-            <div className="text-center mb-10 ">
-              <div className="flex items-center justify-center">
-                <h2 className="text-5xl text-[#3588aa] font-bold mb-6">
-                  What Our Learners Think
-                </h2>
-                <FaQuoteRight className="text-3xl text-[#fd7379]" />
-              </div>
-              <p className="max-w-[600px] mx-auto text-gray-600">
-                Hear inspiring experiences and feedback from our users as they
-                share how Lingo Bingo transformed their language learning
-                journey.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div
-                className="flex justify-start"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
-                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
-                  <img className="size-[200px]" src={sharma} alt="" />
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
-                      Ravi Sharma
-                    </h3>
-                    <FaQuoteLeft className="text-[#fd7379]" />
-                    <p className="text-gray-600">
-                      {" "}
-                      The app's interactive approach helped me retain vocabulary
-                      effortlessly. Learning Japanese has never been this fun!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="flex justify-end"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-              >
-                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
-                      Sofia Alvarez
-                    </h3>
-                    <FaQuoteLeft className="text-[#fd7379]" />
-                    <p className="text-gray-600">
-                      {" "}
-                      I loved how pronunciation is taught alongside vocabulary.
-                      It gave me the confidence to speak Japanese without
-                      hesitation.
-                    </p>
-                  </div>
-                  <img className="size-[200px]" src={alvarez} alt="" />
-                </div>
-              </div>
-              <div
-                className="flex justify-start"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
-                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
-                  <img className="size-[200px]" src={lee} alt="" />
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
-                      Michael Lee
-                    </h3>
-                    <FaQuoteLeft className="text-[#fd7379]" />
-                    <p className="text-gray-600">
-                      {" "}
-                      Personalized missions kept me motivated and on track. I’ve
-                      made amazing progress in learning Japanese with Lingo
-                      Bingo!
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="flex justify-end"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-              >
-                <div className="bg-[#f1ab4a87] flex items-center justify-between max-w-[950px]">
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
-                      Aisha Khan
-                    </h3>
-                    <FaQuoteLeft className="text-[#fd7379]" />
-                    <p className="text-gray-600">
-                      Lingo Bingo turned language learning into a daily habit.
-                      The engaging methods helped me master Japanese faster than
-                      I expected!
-                    </p>
-                  </div>
-                  <img className="size-[200px]" src={khan} alt="" />
-                </div>
-              </div>
-            </div>
+      <div className="w-[80%] mx-auto">
+        <div className="text-center mb-10">
+          <div className="flex items-center justify-center">
+            <h2 className="text-5xl text-[#3588aa] font-bold mb-6">
+              What Our Learners Think
+            </h2>
+            <FaQuoteRight className="text-3xl text-[#fd7379]" />
           </div>
-        </section>
+          <p className="max-w-[600px] mx-auto text-gray-600">
+            Hear inspiring experiences and feedback from our users as they
+            share how Lingo Bingo transformed their language learning journey.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          {[
+            { name: "Ravi Sharma", img: sharma, text: "The app's interactive approach helped me retain vocabulary effortlessly. Learning Japanese has never been this fun!" },
+            { name: "Sofia Alvarez", img: alvarez, text: "I loved how pronunciation is taught alongside vocabulary. It gave me the confidence to speak Japanese without hesitation." },
+            { name: "Michael Lee", img: lee, text: "Personalized missions kept me motivated and on track. I’ve made amazing progress in learning Japanese with Lingo Bingo!" },
+            { name: "Aisha Khan", img: khan, text: "Lingo Bingo turned language learning into a daily habit. The engaging methods helped me master Japanese faster than I expected!" }
+          ].map((review, index) => (
+            <div
+              key={index}
+              className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-duration="1000"
+            >
+              <div className="bg-[#f1ab4a87] sm:flex block items-center justify-between max-w-[950px]">
+                {/* odd */}
+                {index % 2 === 0 && (
+                  <img className="size-[200px] rounded-full p-6" src={review.img} alt={review.name} />
+                )}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-[#3588aa]">
+                    {review.name}
+                  </h3>
+                  <FaQuoteLeft className="text-[#fd7379]" />
+                  <p className="text-gray-600">{review.text}</p>
+                </div>
+                {/* even */}
+                {index % 2 !== 0 && (
+                  <div className="w-full flex justify-end">
+                    <img className="size-[200px] rounded-full p-6" src={review.img} alt={review.name} />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
       </main>
     </div>
   );

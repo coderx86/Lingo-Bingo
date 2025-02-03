@@ -28,7 +28,7 @@ const Learn = () => {
               every step is designed to make learning fun and effective!
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 mt-16 mb-20">
+          <div className="grid sm:grid-cols-3 grid-cols-2 gap-4 mt-16 mb-20">
             {cardNumArray.map((card, index) => (
               <LessonCard key={index} cardNum={card} />
             ))}
