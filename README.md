@@ -1,4 +1,4 @@
-﻿# <img src="src/assets/logo-icon.png"> Lingo Bingo: A Vocabulary Learning App
+﻿# <img width="30px" src="src/assets/logo-icon.png"> Lingo Bingo: A Vocabulary Learning App
 LINGO-BINGO is an interactive Japanese language learning app designed to enhance vocabulary retention and communication skills. It offers engaging exercises, flashcards, and quizzes to make learning fun and effective. Users can log in via Firebase for a personalized experience and track progress. The app simplifies language acquisition, helping learners memorize words effortlessly while improving pronunciation and usage. With a single click, users can start their journey to mastering Japanese vocabulary in an enjoyable and efficient way.
 
 ## **Key Features of the Project**
@@ -25,4 +25,4 @@ LINGO-BINGO is an interactive Japanese language learning app designed to enhance
 	-   **Usage:** Wrapped around CountUp components to animate only when they appear in the viewport.
 
 ## Project live link 🔗
-[Lingo Bingo: A Vocabulary Learning App](https://sdx86-lingo-bino.netlify.app/)
+[Lingo Bingo: A Vocabulary Learning App](https://sdx86-lingo-bino.netlify.app/home)
