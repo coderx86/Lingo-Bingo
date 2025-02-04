@@ -33,9 +33,9 @@ const Home = () => {
       </Helmet>
 
       {/* banner */}
-      <div className="bg-gradient-to-r from-[#3588aa] to-[#58b58c] text-white  pt-24">
+      <div className="bg-gradient-to-r w-full overflow-hidden from-[#3588aa] to-[#58b58c] text-white  pt-24">
         <div className="w-[80%] mx-auto sm:flex block items-center py-8">
-          <div className="carousel mr-10 w-full sm:w-1/2">
+          <div className="carousel mr-10 w-full">
             <div id="slide1" className="carousel-item relative w-full">
               <img src={logoFlat} className="w-full" />
               <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

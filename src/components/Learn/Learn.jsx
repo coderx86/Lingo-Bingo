@@ -4,12 +4,6 @@ import { Helmet } from "react-helmet-async";
 
 const Learn = () => {
   const vocabulary = useLoaderData();
-  const vocabsPerCard = 10;
-  const itemsPerCard = Math.ceil(vocabulary.length / vocabsPerCard);
-  const cardNumArray = [];
-  for (let i = 0; i < itemsPerCard; i++) {
-    cardNumArray.push(i + 1);
-  }
 
   return (
     <div>
@@ -29,8 +23,8 @@ const Learn = () => {
             </p>
           </div>
           <div className="grid sm:grid-cols-3 grid-cols-2 gap-4 mt-16 mb-20">
-            {cardNumArray.map((card, index) => (
-              <LessonCard key={index} cardNum={card} />
+            {Array(Math.ceil(vocabulary.length / 10)).fill().map((card, index) => (
+              <LessonCard key={index} cardNum={index + 1} />
             ))}
           </div>
           <div className="mb-8">

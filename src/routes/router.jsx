@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/learn",
-                loader: ()=> fetch('japaneseWord.json'),
+                loader: ()=> fetch('/japaneseWord.json'),
                 element: <PrivateRoute>
                             <Learn></Learn>
                         </PrivateRoute>
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/lesson/:cardNum",
-                loader: ()=> fetch('japaneseWord.json'),
+                loader: ()=> fetch('/japaneseWord.json'),
                 element: <PrivateRoute>
                     <Lesson></Lesson>
                 </PrivateRoute>
