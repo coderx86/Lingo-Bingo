@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 const Me = () => {
   const { user, loading } = useContext(authContext);
-  console.log(user);
   return (
     <div className="flex justify-center pt-24 bg-gradient-to-b from-[#58b58d44] to-[#f1ab4a3b]">
       <div className="my-16 py-16 border-[#58b58c] border-2 sm:w-[500px] w-[400px] rounded-xl">
